@@ -1,0 +1,25 @@
+[toolchain]
+package_manager = "yarn"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.localnet]
+tipping_app = "BHv63VgDSZCbiPDDnZigyvbhVc8gSKV4WVaM2LusnyXg"
+
+[programs.devnet]
+tipping_app = "BHv63VgDSZCbiPDDnZigyvbhVc8gSKV4WVaM2LusnyXg"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "Localnet"
+wallet = "~/.config/solana/id.json"
+
+[test]
+startup_wait = 10000
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
